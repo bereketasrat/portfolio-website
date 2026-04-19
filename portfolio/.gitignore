@@ -1,6 +1,10 @@
 # Sensitive credentials — never commit these
 php/config.php
 
+# Profile images — keep private
+images/profile1.JPG
+images/profile2.JPG
+
 # Composer dependencies — run "composer install" on the server instead
 vendor/
 
