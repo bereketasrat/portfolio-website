@@ -1,0 +1,334 @@
+/* ============================================================
+   PORTFOLIO — 3D EFFECTS LAYER
+   Loaded after style.css. Overrides and extends with 3D.
+   ============================================================ */
+
+/* ---------- Global 3D vars ---------- */
+:root {
+  --perspective:    1000px;
+  --card-shadow-3d: 0 20px 60px rgba(0,0,0,0.2), 0 6px 20px rgba(37,99,235,0.15);
+}
+
+/* ---------- Hero canvas (Three.js) ---------- */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero { position: relative; }
+.hero .container { position: relative; z-index: 1; }
+
+/* ---------- Hero name 3D text ---------- */
+.hero-name {
+  text-shadow:
+    0 2px 0 rgba(0,0,0,0.3),
+    0 4px 0 rgba(0,0,0,0.2),
+    0 6px 0 rgba(0,0,0,0.1),
+    0 8px 20px rgba(0,0,0,0.4);
+  transform: perspective(600px) rotateX(4deg);
+  display: inline-block;
+}
+.hero-greeting { animation: floatY 3s ease-in-out infinite; }
+
+/* ---------- Scroll reveal — 3D version (overrides style.css) ---------- */
+.fade-up {
+  opacity: 0;
+  transform: perspective(800px) translateY(40px) rotateX(8deg);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.34,1.2,0.64,1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: perspective(800px) translateY(0) rotateX(0deg);
+}
+
+/* ---------- Tilt cards ---------- */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.tilt-card:hover { box-shadow: var(--card-shadow-3d); }
+
+/* ---------- Preview cards ---------- */
+.preview-card {
+  transform-style: preserve-3d;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+}
+.preview-card .icon {
+  display: inline-block;
+  animation: floatY 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 12px rgba(37,99,235,0.3));
+}
+.preview-card:nth-child(2) .icon { animation-delay: 0.5s; }
+.preview-card:nth-child(3) .icon { animation-delay: 1s; }
+
+/* ---------- Service cards ---------- */
+.service-card { transform-style: preserve-3d; }
+.service-card:hover {
+  transform: translateY(-10px) rotateX(4deg) rotateY(-2deg);
+  box-shadow: 20px 30px 60px rgba(37,99,235,0.2), -5px -5px 20px rgba(255,255,255,0.8);
+}
+.service-icon {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  filter: drop-shadow(0 4px 8px rgba(37,99,235,0.25));
+}
+.service-card:hover .service-icon {
+  transform: scale(1.3) rotateY(15deg);
+}
+
+/* ---------- Project cards ---------- */
+.project-card { transform-style: preserve-3d; }
+.project-card:hover {
+  transform: translateY(-12px) rotateX(3deg);
+  box-shadow: 0 30px 60px rgba(37,99,235,0.2), 0 10px 20px rgba(0,0,0,0.1);
+}
+.project-thumb { transition: transform 0.4s ease; }
+.project-card:hover .project-thumb { transform: scale(1.03); }
+
+/* ---------- Skill bars ---------- */
+.skill-bar {
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.12), 0 2px 0 rgba(255,255,255,0.8);
+  transform: perspective(200px) rotateX(5deg);
+}
+.skill-fill {
+  box-shadow: 0 2px 8px rgba(37,99,235,0.5), 0 0 20px rgba(56,189,248,0.3);
+}
+
+/* ---------- Education cards ---------- */
+.edu-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.edu-card:hover {
+  transform: translateX(8px) perspective(600px) rotateY(-3deg);
+  box-shadow: -8px 8px 30px rgba(37,99,235,0.15);
+}
+
+/* ---------- Tech badges ---------- */
+.tech-badge {
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+}
+.tech-badge:hover {
+  transform: perspective(300px) translateZ(20px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+}
+
+/* ---------- Navbar glassmorphism ---------- */
+.navbar {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.navbar.scrolled {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.5) inset;
+}
+
+/* ---------- Buttons 3D press ---------- */
+.btn {
+  box-shadow: 0 4px 15px rgba(37,99,235,0.2), 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(37,99,235,0.35), 0 4px 8px rgba(0,0,0,0.15);
+}
+.btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 8px rgba(37,99,235,0.2);
+}
+
+/* ---------- Section titles ---------- */
+.section-title {
+  text-shadow: 0 2px 0 rgba(0,0,0,0.08), 0 4px 12px rgba(37,99,235,0.1);
+}
+
+/* ---------- Contact form glassmorphism ---------- */
+.contact-form {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 25px 50px rgba(37,99,235,0.12), 0 0 0 1px rgba(255,255,255,0.5) inset;
+  transform: perspective(1200px) rotateY(-2deg);
+  transition: transform 0.4s ease;
+}
+.contact-form:hover { transform: perspective(1200px) rotateY(0deg); }
+
+/* ---------- Social links ---------- */
+.social-link:hover {
+  transform: translateY(-4px) rotateY(20deg) scale(1.1);
+}
+
+/* ---------- About image float ---------- */
+.about-img-placeholder {
+  animation: float3d 4s ease-in-out infinite;
+  box-shadow: 0 30px 60px rgba(37,99,235,0.3), 0 0 0 8px rgba(37,99,235,0.1);
+}
+
+/* ---------- Page header pattern overlay ---------- */
+.page-header-3d { position: relative; overflow: hidden; }
+.page-header-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ---------- Floating orbs ---------- */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatOrb 6s ease-in-out infinite;
+  z-index: 0;
+}
+.orb-1 {
+  width: 120px; height: 120px;
+  background: radial-gradient(circle at 35% 35%, rgba(56,189,248,0.6), rgba(37,99,235,0.2));
+  box-shadow: 0 0 40px rgba(56,189,248,0.4), inset 0 0 20px rgba(255,255,255,0.2);
+  top: 15%; right: 8%;
+}
+.orb-2 {
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at 35% 35%, rgba(99,102,241,0.6), rgba(37,99,235,0.2));
+  box-shadow: 0 0 30px rgba(99,102,241,0.4), inset 0 0 15px rgba(255,255,255,0.2);
+  bottom: 20%; right: 20%;
+  animation-delay: 1.5s;
+}
+.orb-3 {
+  width: 50px; height: 50px;
+  background: radial-gradient(circle at 35% 35%, rgba(56,189,248,0.8), rgba(37,99,235,0.3));
+  box-shadow: 0 0 20px rgba(56,189,248,0.5), inset 0 0 10px rgba(255,255,255,0.3);
+  top: 40%; right: 15%;
+  animation-delay: 3s;
+}
+
+/* ============================================================
+   HERO PROFILE PICTURE
+   ============================================================ */
+
+/* Photo wrapper — positioned to the right of text */
+.hero-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  animation: fadeUp 0.9s ease 0.25s both;
+}
+
+/* Glowing gradient ring */
+.hero-photo-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb, #6366f1);
+  box-shadow:
+    0 0 0 6px rgba(56,189,248,0.15),
+    0 0 40px rgba(37,99,235,0.5),
+    0 0 80px rgba(56,189,248,0.2);
+  animation: float3d 4s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Actual photo */
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border: 4px solid rgba(255,255,255,0.15);
+}
+
+/* Fallback shown via onerror JS */
+.hero-photo-fallback {
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e3a5f, #2563eb);
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+/* Decorative dots */
+.photo-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.dot-1 {
+  width: 16px; height: 16px;
+  top: 8px; right: 0px;
+  animation: floatY 2.5s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(56,189,248,0.9);
+}
+.dot-2 {
+  width: 10px; height: 10px;
+  bottom: 18px; left: 0px;
+  animation: floatY 3.2s ease-in-out infinite 0.8s;
+  background: #6366f1;
+  box-shadow: 0 0 10px rgba(99,102,241,0.9);
+}
+.dot-3 {
+  width: 8px; height: 8px;
+  bottom: 55px; right: -8px;
+  animation: floatY 2.8s ease-in-out infinite 1.4s;
+  box-shadow: 0 0 8px rgba(56,189,248,0.9);
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes float3d {
+  0%, 100% {
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px);
+    box-shadow: 0 0 0 6px rgba(56,189,248,0.15), 0 0 40px rgba(37,99,235,0.5);
+  }
+  33% {
+    transform: perspective(800px) rotateX(5deg) rotateY(8deg) translateY(-12px);
+    box-shadow: 0 0 0 6px rgba(56,189,248,0.2), 0 0 60px rgba(37,99,235,0.6);
+  }
+  66% {
+    transform: perspective(800px) rotateX(-3deg) rotateY(-5deg) translateY(-6px);
+    box-shadow: 0 0 0 6px rgba(56,189,248,0.15), 0 0 50px rgba(37,99,235,0.55);
+  }
+}
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-20px) scale(1.05); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hero-layout {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-layout .hero-content { max-width: 100%; }
+  .hero-btns { justify-content: center; }
+  .hero-photo-wrap { width: 200px; height: 200px; }
+}
+@media (max-width: 480px) {
+  .hero-photo-wrap { width: 160px; height: 160px; }
+}
+
+/* ---------- Disable heavy 3D on mobile ---------- */
+@media (max-width: 640px) {
+  .service-card:hover,
+  .project-card:hover,
+  .contact-form,
+  .contact-form:hover { transform: none !important; }
+  .hero-name { transform: none; }
+}

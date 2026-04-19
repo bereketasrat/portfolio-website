@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | BEKI Dev</title>
+  <meta name="description" content="Get in touch with Bereket Asrat for freelance projects, job opportunities, or just to say hello." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-3d.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">BEKI<span>Dev</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <div style="background:linear-gradient(135deg,#0f172a,#2563eb);padding:120px 0 60px;color:white;text-align:center;">
+    <div class="container">
+      <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:0.5rem;">Get In <span style="color:#38bdf8;">Touch</span></h1>
+      <p style="color:rgba(255,255,255,0.7);">I'd love to hear from you</p>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info fade-up">
+          <h3>Let's talk about your project</h3>
+          <p>
+            Whether you have a project in mind, want to hire me, or just want to say hello —
+            my inbox is always open. I'll get back to you as soon as possible.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="ci-icon">📧</div>
+              <div>
+                <strong style="display:block;color:var(--secondary);font-size:0.85rem;">Email</strong>
+                <a href="mailto:bereketasratt1@gmail.com" style="color:var(--primary);">bereketasratt1@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">📞</div>
+              <div>
+                <strong style="display:block;color:var(--secondary);font-size:0.85rem;">Phone</strong>
+                <a href="tel:+251901847744" style="color:var(--primary);">+251 901847744</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">📍</div>
+              <div>
+                <strong style="display:block;color:var(--secondary);font-size:0.85rem;">Location</strong>
+                <span>Hossana, Ethiopia</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon">🕐</div>
+              <div>
+                <strong style="display:block;color:var(--secondary);font-size:0.85rem;">Response Time</strong>
+                <span>Within 24 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="social-links" style="margin-top:2rem;">
+            <a href="https://github.com/bereketasrat" class="social-link" aria-label="GitHub" style="background:rgba(37,99,235,0.1);color:var(--primary);">🐙</a>
+            <a href="https://www.linkedin.com/in/#" class="social-link" aria-label="LinkedIn" style="background:rgba(37,99,235,0.1);color:var(--primary);">💼</a>
+            <a href="https://t.me/bereket_asrat" class="social-link" aria-label="Telegram" style="background:rgba(37,99,235,0.1);color:var(--primary);">🐦</a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="fade-up">
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <!-- Success / Error message -->
+            <div id="formMessage" class="form-message"></div>
+
+            <!-- Name field -->
+            <div class="form-group">
+              <label for="name">Full Name <span style="color:var(--error)">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Bereket Asrat"
+                autocomplete="name"
+              />
+              <span class="field-error" id="nameError"></span>
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+              <label for="email">Email Address <span style="color:var(--error)">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="********@gmail.com"
+                autocomplete="email"
+              />
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <!-- Subject field (optional, not stored separately) -->
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Project inquiry, job offer, etc."
+              />
+            </div>
+
+            <!-- Message field -->
+            <div class="form-group">
+              <label for="message">Message <span style="color:var(--error)">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your project or inquiry..."
+              ></textarea>
+              <span class="field-error" id="messageError"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Send Message
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">BEKI<span style="color:white">Dev</span></div>
+          <p>Junior Software Engineer passionate about building great web experiences.</p>
+          <div class="social-links">
+            <a href="https://github.com/bereketasrat" class="social-link" aria-label="GitHub">🐙</a>
+            <a href="https://www.linkedin.com/in/#" class="social-link" aria-label="LinkedIn">💼</a>
+            <a href="https://t.me/bereket_asrat" class="social-link" aria-label="telegram">🐦</a>
+            <a href="https://www.facebook.com/bereketasratt" class="social-link" aria-label="Facebook">✉️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:bereketasratt1@gmail.com">bereketasratt1@gmail.com</a></li>
+            <li><a href="tel:+251901847744">+251 901847744</a></li>
+            <li>Hossana, Ethiopia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bereket Asrat. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/tilt.js"></script>
+</body>
+</html>

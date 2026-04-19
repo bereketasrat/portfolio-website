@@ -1,0 +1,14 @@
+# Sensitive credentials — never commit these
+php/config.php
+
+# Composer dependencies — run "composer install" on the server instead
+vendor/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# PHP error logs
+*.log
+error_log

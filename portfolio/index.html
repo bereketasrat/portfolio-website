@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEKI Dev | Junior Software Engineer</title>
+  <meta name="description" content="Bereket Asrat — Junior Software Engineer based in Hossana, Ethiopia. Building clean, responsive web applications with PHP, JavaScript, and MySQL." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-3d.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">BEKI<span>Dev</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero page-header-3d">
+    <canvas id="hero-canvas"></canvas>
+    <!-- Floating 3D orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="container">
+      <div class="hero-layout">
+
+        <!-- Left: text content -->
+        <div class="hero-content">
+          <p class="hero-greeting">👋 Hello, I'm</p>
+          <h1 class="hero-name">Bereket Asrat</h1>
+          <p class="hero-title">Junior Software Engineer</p>
+          <p class="hero-desc">
+            I build clean, responsive web applications with a passion for great user experiences.
+            Currently open to new opportunities and freelance projects.
+          </p>
+          <div class="hero-btns">
+            <a href="projects.html" class="btn btn-primary">View Projects</a>
+            <!--<a href="contact.html" class="btn btn-outline">Hire Me</a>-->
+            <a href="contact.html" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Right: profile picture -->
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-ring">
+             <!-- Replace src with your actual photo path, e.g. images/profile.jpg -->
+            <img
+              src="images/profile4.JPG"
+              alt="Bereket Asrat — Junior Software Engineer"
+              class="hero-photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            />
+            
+            <!-- Fallback avatar shown if image is missing -->
+            <div class="hero-photo-fallback">👨‍💻</div> 
+          </div>
+          <!-- Decorative floating dots -->
+          <span class="photo-dot dot-1"></span>
+          <span class="photo-dot dot-2"></span>
+          <span class="photo-dot dot-3"></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PREVIEW: ABOUT ===== -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <h2 class="section-title">About <span class="highlight">Me</span></h2>
+      <p class="section-subtitle">A quick look at who I am</p>
+      <div class="preview-grid">
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">🎓</div>
+          <h3>Education</h3>
+          <p>B.Sc. Software Engineering student at a university.</p>
+          <br><a href="about.html" class="btn btn-outline" style="font-size:0.85rem;padding:0.5rem 1.2rem;">Learn More</a>
+        </div>
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">💻</div>
+          <h3>Skills</h3>
+          <p>Proficient in HTML, CSS, JavaScript, PHP, MySQL, and version control with Git.</p>
+          <br><a href="about.html#skills" class="btn btn-outline" style="font-size:0.85rem;padding:0.5rem 1.2rem;">View Skills</a>
+        </div>
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">🚀</div>
+          <h3>Projects</h3>
+          <p>Built several real-world projects including Task management, portfolio website, and dashboards.</p>
+          <br><a href="projects.html" class="btn btn-outline" style="font-size:0.85rem;padding:0.5rem 1.2rem;">See Projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PREVIEW: SERVICES ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What I <span class="highlight">Offer</span></h2>
+      <p class="section-subtitle">Services I provide as a Junior Software Engineer</p>
+      <div class="preview-grid">
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>Full-stack web apps using HTML, CSS, JavaScript, and PHP with MySQL databases.</p>
+        </div>
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">🎨</div>
+          <h3>UI/UX Design</h3>
+          <p>Responsive, mobile-first designs that look great on every screen size.</p>
+        </div>
+        <div class="service-card tilt-card fade-up">
+          <div class="service-icon">📱</div>
+          <h3>Website Optimization</h3>
+          <p>
+            Improving the performance of existing websites.
+          </p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="services.html" class="btn btn-primary">All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PREVIEW: PROJECTS ===== -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <h2 class="section-title">Recent <span class="highlight">Projects</span></h2>
+      <p class="section-subtitle">A few things I've built recently</p>
+      <div class="preview-grid">
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">🏨</div>
+          <h3>Hotel Room Reservation System</h3>
+          <p>A full-stack booking system that allows users to check room availability, make reservations, and manage bookings with an admin panel using PHP & MySQL.</p>
+        </div>
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">🖥️</div>
+          <h3>Portfolio Website</h3>
+          <p>A personal portfolio website showcasing projects, skills, and contact information with a responsive design and interactive UI using HTML, CSS, JavaScript, and PHP.</p>
+        </div>
+        <div class="preview-card tilt-card fade-up">
+          <div class="icon">✅</div>
+          <h3>Task Manager</h3>
+          <p>A productivity web app for managing tasks with features like task creation, deadlines, priority labels, and status tracking using PHP, MySQL, and JavaScript.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="projects.html" class="btn btn-primary">All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">BEKI<span style="color:white">Dev</span></div>
+          <p>Junior Software Engineer passionate about building great web experiences.</p>
+          <div class="social-links">
+            <a href="https://github.com/bereketasrat" class="social-link" aria-label="GitHub">🐙</a>
+            <a href="https://www.linkedin.com/in/#" class="social-link" aria-label="LinkedIn">💼</a>
+            <a href="https://t.me/bereket_asrat" class="social-link" aria-label="telegram">🐦</a>
+            <a href="https://www.facebook.com/bereketasratt" class="social-link" aria-label="Facebook">✉️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:bereketasratt1@gmail.com">bereketasratt1@gmail.com</a></li>
+            <li><a href="tel:+251901847744">+251 901847744</a></li>
+            <li>Hossana, Ethiopia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bereket Asrat. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/three-hero.js"></script>
+  <script src="js/tilt.js"></script>
+</body>
+</html>
